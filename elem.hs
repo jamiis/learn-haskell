@@ -1,5 +1,2 @@
 elem' :: (Eq a) => a -> [a] -> Bool
-elem' _ [] = False
-elem' a (x:xs)
-    | a == x = True
-    | otherwise = a `elem'` xs
+elem' y ys = foldl (\acc x -> if x == y then True else acc) False ys
